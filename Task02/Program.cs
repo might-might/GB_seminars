@@ -4,19 +4,38 @@
 // a = -9 b = -3 -> max = -3
 
 Console.WriteLine("Введите первое число: ");
-string a = Console.ReadLine();
+int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
-string b = Console.ReadLine();
-int a1 = int.Parse(a);
-int b1 = int.Parse(b);
-if (a1 > b1)
+int numberB = Convert.ToInt32(Console.ReadLine());
+if (numberA > numberB)
 {
     Console.Write("Их введенных чисел максимальное - ");
-    Console.WriteLine(a1);
+    Console.WriteLine(numberA);
 }
 
 else
 {
-    Console.Write("Их введенных чисел максимальное - ");
-    Console.WriteLine(b1);
+    Console.Write("Из введенных чисел максимальное - ");
+    Console.WriteLine(numberB);
 }
+
+
+// Альтернативный вариант:
+
+// Console.WriteLine("Введите первое число: ");
+// string a = Console.ReadLine();
+// Console.WriteLine("Введите второе число: ");
+// string b = Console.ReadLine();
+// int a1 = int.Parse(a);
+// int b1 = int.Parse(b);
+// if (a1 > b1)
+// {
+//     Console.Write("Их введенных чисел максимальное - ");
+//     Console.WriteLine(a1);
+// }
+
+// else
+// {
+//     Console.Write("Их введенных чисел максимальное - ");
+//     Console.WriteLine(b1);
+// }
