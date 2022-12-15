@@ -2,3 +2,22 @@
 // 2, 3, 7 -> 7
 // 44 5 78 -> 78
 // 22 3 9 -> 22
+
+Console.WriteLine("Введите первое число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+int numberB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+int numberB = Convert.ToInt32(Console.ReadLine());
+if (numberA > numberB)
+{
+    Console.Write("Их введенных чисел максимальное - ");
+    Console.WriteLine(numberA);
+}
+
+else
+{
+    // Console.Write("Из введенных чисел максимальное - ");
+    // Console.WriteLine(numberB);
+    Console.WriteLine($"Из введенных чисел максимальное - {numberB}");
+}

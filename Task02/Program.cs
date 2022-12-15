@@ -15,8 +15,9 @@ if (numberA > numberB)
 
 else
 {
-    Console.Write("Из введенных чисел максимальное - ");
-    Console.WriteLine(numberB);
+    // Console.Write("Из введенных чисел максимальное - ");
+    // Console.WriteLine(numberB);
+    Console.WriteLine($"Из введенных чисел максимальное - {numberB}");
 }
 
 
