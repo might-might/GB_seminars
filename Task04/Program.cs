@@ -7,17 +7,50 @@ Console.WriteLine("Введите первое число: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите третье число: ");
+int numberC = Convert.ToInt32(Console.ReadLine());
 if (numberA > numberB)
 {
-    Console.Write("Их введенных чисел максимальное - ");
-    Console.WriteLine(numberA);
+    if (numberA > numberC)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberA}");
+    }
+    else if (numberC > numberA)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberC}");
+    }
+    else if (numberC == numberA)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberC}. Вы ввели его дважды.");
+    }
 }
-
-else
+else if (numberB > numberA)
 {
-    // Console.Write("Из введенных чисел максимальное - ");
-    // Console.WriteLine(numberB);
-    Console.WriteLine($"Из введенных чисел максимальное - {numberB}");
+    if (numberB > numberC)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberB}");
+    }
+    else if (numberC > numberB)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberC}");
+    }
+    else if (numberC == numberB)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberC}. Вы ввели его дважды.");
+    }
+}
+else if (numberA == numberB)
+{
+    if (numberA > numberC)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberA}. Вы ввели его дважды.");
+    }
+    else if (numberC > numberA)
+    {
+        Console.WriteLine($"Из введенных чисел максимальное - {numberC}");
+    }
+    else if (numberC == numberA)
+    {
+        Console.WriteLine($"Вы ввели три одинаковых числа!");
+    }
 }

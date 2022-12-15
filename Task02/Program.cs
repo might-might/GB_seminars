@@ -13,11 +13,15 @@ if (numberA > numberB)
     Console.WriteLine(numberA);
 }
 
-else
+else if (numberB > numberA)
 {
     // Console.Write("Из введенных чисел максимальное - ");
     // Console.WriteLine(numberB);
     Console.WriteLine($"Из введенных чисел максимальное - {numberB}");
+}
+else
+{
+    Console.WriteLine("Числа равны!");
 }
 
 
