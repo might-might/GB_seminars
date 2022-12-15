@@ -2,18 +2,29 @@
 // 5 -> 2, 4
 // 8 -> 2, 4, 6, 8
 
-Console.WriteLine("Введите число: ");
+Console.WriteLine("Введите натуральное число: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
 int i = 2;
-while (i <= numberN)
+if (numberN <= 0)
 {
-    if (i < numberN)
+    Console.WriteLine("Вы ввели неверное число.");
+}
+else
+{
+    while (i <= numberN)
     {
-        Console.Write(i + ", ");
+        if (i + 1 == numberN)
+        {
+            Console.WriteLine(i);
+        }
+        else if (i < numberN)
+        {
+            Console.Write(i + ", ");
+        }
+        else if (i == numberN)
+        {
+            Console.WriteLine(i);
+        }
+        i += 2;
     }
-    else if (i == numberN)
-    {
-        Console.WriteLine(i);
-    }
-    i += 2;
 }
