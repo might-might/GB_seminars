@@ -12,7 +12,7 @@ else if (numberA == 3)
 {
     Console.WriteLine($"{numberA} - это среда");
 }
-else if (numberA == 42)
+else if (numberA == 4)
 {
     Console.WriteLine($"{numberA} - это четверг");
 }
