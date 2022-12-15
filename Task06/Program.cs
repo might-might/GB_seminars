@@ -4,11 +4,5 @@
 // 7 -> нет
 Console.WriteLine("Введите число: ");
 int numberA = Convert.ToInt16(Console.ReadLine());
-if (numberA % 2 == 0)
-{
-    Console.WriteLine($"Число {numberA} является четным");
-}
-else
-{
-    Console.WriteLine($"Число {numberA} является нечетным");
-}
+if (numberA % 2 == 0) Console.WriteLine($"Число {numberA} является четным");
+else Console.WriteLine($"Число {numberA} является нечетным");
