@@ -6,5 +6,9 @@
 
 Console.WriteLine("Введите номер дня недели:");
 int numberDay = Convert.ToInt32(Console.ReadLine());
-if (1 <= numberDay & numberDay <= 5) Console.WriteLine($"{numberDay} -> нет");
-if (6 <= numberDay & numberDay <= 7) Console.WriteLine($"{numberDay} -> да");
+void NumberDay(int num)
+{
+    if (1 <= num & num <= 5) Console.WriteLine($"{num} -> нет");
+    if (6 <= num & num <= 7) Console.WriteLine($"{num} -> да");
+}
+NumberDay(numberDay);
