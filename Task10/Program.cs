@@ -1,8 +1,10 @@
-﻿int number = new Random().Next(100, 1000);
-Console.WriteLine($"Случайное трехзначное число => {number}");
+﻿Console.WriteLine("Введите трехзначное число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+void GetNumberWithoutSecondDigit(int num)
+{
+    int firstDigit = numberA / 100;
+    int thirdDigit = numberA % 10;
+    Console.WriteLine(firstDigit * 10 + thirdDigit);
+}
 
-int firstDigit = number / 100;
-int thirdDigit = number % 10;
-Console.WriteLine(firstDigit);
-Console.WriteLine(thirdDigit);
-Console.WriteLine($"{firstDigit}{thirdDigit}");
+GetNumberWithoutSecondDigit(numberA);
