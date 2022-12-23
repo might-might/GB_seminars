@@ -11,7 +11,7 @@ int pointB1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите вторую координату точки B():");
 int pointB2 = Convert.ToInt32(Console.ReadLine());
 
-// Math.Pow();
+// Math.Pow(counter, 2);
 // Math.Sqrt();
 // Math.Round(d, 2, MidpointRounding.ToZero);
 
