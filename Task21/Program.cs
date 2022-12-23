@@ -23,7 +23,7 @@ int pointB3 = Convert.ToInt32(Console.ReadLine());
 double Dist(int num1, int num2, int num3, int num4, int num5, int num6)
 {
     double hypotenuse = Math.Sqrt((num1 - num4) * (num1 - num4)
-        + (num2 - num5) * (num2 - num5)+ (num3 - num6) * (num3 - num6));
+        + (num2 - num5) * (num2 - num5) + (num3 - num6) * (num3 - num6));
     hypotenuse = Math.Round(hypotenuse, 2, MidpointRounding.ToZero);
     return hypotenuse;
 }
