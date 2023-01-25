@@ -35,7 +35,7 @@ void NumbersAboveZero(int[] array)
     {
         if (array[i] > 0) sum += 1;
     }
-    Console.WriteLine($"В введенном массиве чисел положительных - {sum}");
+    Console.WriteLine($"В введенном массиве чисел положительных: {sum}");
 }
 
 int[] arr = CreateArray(currentSize);
