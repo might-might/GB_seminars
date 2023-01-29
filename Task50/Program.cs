@@ -34,7 +34,7 @@ void CheckPrintCell(int[,] matrix, int a, int b)
     else Console.WriteLine($"В ячейке ({a},{b}) находится элемент {matrix[a - 1, b - 1]}");
 }
 
-void PrintNumber(int[,] matrix)
+void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -49,5 +49,5 @@ void PrintNumber(int[,] matrix)
 }
 
 int[,] array2D = CreateMatrixRandomInt(5, 5, 1, 100);
-PrintNumber(array2D);
+PrintMatrix(array2D);
 CheckPrintCell(array2D, m, n);
