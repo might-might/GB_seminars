@@ -27,11 +27,11 @@ int[,] CreateMatrixRandomInt(int rows, int columns, int min, int max)
 
 void CheckPrintCell(int[,] matrix, int a, int b)
 {
-    if (a < matrix.GetLength(0)&& b < matrix.GetLength(1))
+    if (a == 0 || b == 0 || a > matrix.GetLength(0) || b > matrix.GetLength(1))
     {
-        Console.WriteLine($"В ячейке ({a},{b}) находится элемент {matrix[a - 1, b - 1]}");
+        Console.WriteLine($"({a},{b}) -> Такой ячейки в массиве нет");
     }
-    else Console.WriteLine($"({a},{b}) -> Такой ячейки в массиве нет");
+    else Console.WriteLine($"В ячейке ({a},{b}) находится элемент {matrix[a - 1, b - 1]}");
 }
 
 void PrintNumber(int[,] matrix)
