@@ -6,24 +6,9 @@
 // 18 20
 // 15 18
 
-int[,] CreateMatrixRandomInt1(int rows, int columns, int min, int max)
+int[,] CreateMatrixRandomIntQuad(int lines, int min, int max)
 {
-    int[,] matrix = new int[rows, columns];
-    Random rnd = new Random();
-
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            matrix[i, j] = rnd.Next(min, max + 1);
-        }
-    }
-    return matrix;
-}
-
-int[,] CreateMatrixRandomInt2(int rows, int columns, int min, int max)
-{
-    int[,] matrix = new int[rows, columns];
+    int[,] matrix = new int[lines, lines];
     Random rnd = new Random();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -39,7 +24,7 @@ int[,] CreateMatrixRandomInt2(int rows, int columns, int min, int max)
 void ProdMatrix(int[,] matrix1,int[,] matrix2)
 {
     // Произведение двух матрциц - это матрица, которая создается построчно
-    if (matrix2.GetLength(1) == matrix1.GetLength(0))
+    if (matrix1.GetLength(1) == matrix2.GetLength(0))
     {
         int prod = 0;
         int rows = matrix2.GetLength(0);//количество строк новой матрицы
@@ -50,7 +35,7 @@ void ProdMatrix(int[,] matrix1,int[,] matrix2)
         {
             for (int j = 0; j < rows; j++)
             {
-                for (int k = 0; k < columns; k++)
+                for (int k = 0; k < matrix1.GetLength(1); k++)
                 {
                     prod += matrix1[i, k] * matrix2[k, j];
                 }
@@ -69,15 +54,16 @@ void ProdMatrix(int[,] matrix1,int[,] matrix2)
         Console.WriteLine("");
         }
     }
+    
     else
     {
         Console.WriteLine("Эти матрицы нельзя перемножить!");
     }
 }  
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix, int number)
 {
-    Console.WriteLine($"Матрица: ");
+    Console.WriteLine($"Матрица номер {number}: ");
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -88,8 +74,8 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] matrix_1 = CreateMatrixRandomInt1(3, 3, 1, 5);
-int[,] matrix_2 = CreateMatrixRandomInt2(3, 2, 1, 5);
-PrintMatrix(matrix_1);
-PrintMatrix(matrix_2);
+int[,] matrix_1 = CreateMatrixRandomIntQuad(3, 1, 5);
+int[,] matrix_2 = CreateMatrixRandomIntQuad(3, 1, 5);
+PrintMatrix(matrix_1, 1);
+PrintMatrix(matrix_2, 2);
 ProdMatrix(matrix_1, matrix_2);
