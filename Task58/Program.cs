@@ -36,33 +36,48 @@ int[,] CreateMatrixRandomInt2(int rows, int columns, int min, int max)
     return matrix;
 }
 
-int[,] ProdMatrix(int[,] matrix1,int[,] matrix2)
+void ProdMatrix(int[,] matrix1,int[,] matrix2)
 {
-    // if (matrix1.GetLength(1) == matrix2.GetLength(0))
-    // {
-    int prod = 0;
-    int rows = matrix2.GetLength(0);//количество строк новой матрицы
-    int columns = matrix1.GetLength(1);//количество столбцов новой матрицы
-
-    int[,] newMatrix = new int[rows, columns];
-    for (int i = 0; i < columns; i++)
+    // Произведение двух матрциц - это матрица, которая создается построчно
+    if (matrix1.GetLength(1) == matrix2.GetLength(0))
     {
-        for (int j = 0; j < rows; j++)
+        int prod = 0;
+        int rows = matrix2.GetLength(0);//количество строк новой матрицы
+        int columns = matrix1.GetLength(1);//количество столбцов новой матрицы
+
+        int[,] newMatrix = new int[rows, columns];
+        for (int i = 0; i < columns; i++)
         {
-            // for (int k = 0; k < )
-            newMatrix[i, j] = matrix1[i, j] * matrix2[i, j] + matrix1[i, j + 1] * matrix2[i + 1, j];
+            for (int j = 0; j < rows; j++)
+            {
+                for (int k = 0; k < columns; k++)
+                {
+                    prod += matrix1[i, k] * matrix2[k, j];
+                }
+                newMatrix[i, j] += prod;
+                prod = 0;
+                
+            }
+        }
+        Console.WriteLine($"Результирующая матрица: ");
+        for (int i = 0; i < newMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < newMatrix.GetLength(1); j++)
+            {
+                Console.Write($"{newMatrix[i, j]} ");
+            }
+        Console.WriteLine("");
         }
     }
-    return newMatrix;
-    // }
-    // else
-    // {
-    //     Console.WriteLine("Эти матрицы нельзя перемножить!");
-    // }
+    else
+    {
+        Console.WriteLine("Эти матрицы нельзя перемножить!");
+    }
 }  
 
 void PrintMatrix(int[,] matrix)
 {
+    Console.WriteLine($"Матрица: ");
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -73,9 +88,8 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] matrix_1 = CreateMatrixRandomInt1(2, 2, 1, 5);
-int[,] matrix_2 = CreateMatrixRandomInt2(2, 2, 1, 5);
-int[,] matrix_f = ProdMatrix(matrix_1, matrix_2);
+int[,] matrix_1 = CreateMatrixRandomInt1(3, 3, 1, 5);
+int[,] matrix_2 = CreateMatrixRandomInt2(3, 3, 1, 5);
 PrintMatrix(matrix_1);
 PrintMatrix(matrix_2);
-PrintMatrix(matrix_f);
+ProdMatrix(matrix_1, matrix_2);
