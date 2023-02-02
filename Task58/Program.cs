@@ -39,7 +39,7 @@ int[,] CreateMatrixRandomInt2(int rows, int columns, int min, int max)
 void ProdMatrix(int[,] matrix1,int[,] matrix2)
 {
     // Произведение двух матрциц - это матрица, которая создается построчно
-    if (matrix1.GetLength(1) == matrix2.GetLength(0))
+    if (matrix2.GetLength(1) == matrix1.GetLength(0))
     {
         int prod = 0;
         int rows = matrix2.GetLength(0);//количество строк новой матрицы
@@ -89,7 +89,7 @@ void PrintMatrix(int[,] matrix)
 }
 
 int[,] matrix_1 = CreateMatrixRandomInt1(3, 3, 1, 5);
-int[,] matrix_2 = CreateMatrixRandomInt2(3, 3, 1, 5);
+int[,] matrix_2 = CreateMatrixRandomInt2(3, 2, 1, 5);
 PrintMatrix(matrix_1);
 PrintMatrix(matrix_2);
 ProdMatrix(matrix_1, matrix_2);
