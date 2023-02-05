@@ -20,18 +20,31 @@ int NumberFromMtoN(int m, int n)
 
 void GetSum(int numM, int numN)
 {
-    if (numM > numN)
+    if (numM < 0 && numN < 0)
+    {
+        Console.WriteLine($"Вы ввели два отрицательных числа. Между ними нет натуральных чисел, сумма не найдена.");
+    }
+    else if (numM > numN)
     {
         int numK = numN;
         numN = numM;
         numM = numK;
+        int sum = 0;
+        for (int i = 0; i <= numN - numM; i++)
+        {
+            sum += NumberFromMtoN(numM + i, numN);
+        }
+        Console.WriteLine($"Сумма натуральных чисел между числами {numM} и {numN} равна {sum}.");
     }
-    int sum = 0;
-    for (int i = 0; i <= numN - numM; i++)
+    else
     {
-        sum += NumberFromMtoN(numM + i, numN);
+        int sum = 0;
+        for (int i = 0; i <= numN - numM; i++)
+        {
+            sum += NumberFromMtoN(numM + i, numN);
+        }
+        Console.WriteLine($"Сумма натуральных чисел между числами {numM} и {numN} равна {sum}.");
     }
-    Console.WriteLine($"Сумма натуральных чисел между числами {numM} и {numN} равна {sum}.");
 }
 
 
