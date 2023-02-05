@@ -16,6 +16,16 @@ void GetSum(int numM, int numN)
 
 Console.Write("Введите первое целое число больше нуля: ");
 int numberM = Convert.ToInt32(Console.ReadLine());
+while (numberM <= 0)
+{
+    Console.Write("Вы ввели неверное число! Повторите ввод: ");
+    numberM = Convert.ToInt32(Console.ReadLine());
+}
 Console.Write("Введите второе целое число больше нуля: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
+while (numberN <= 0)
+{
+    Console.Write("Вы ввели неверное число! Повторите ввод: ");
+    numberN = Convert.ToInt32(Console.ReadLine());
+}
 GetSum(numberM, numberN);
