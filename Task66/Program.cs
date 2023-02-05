@@ -31,13 +31,13 @@ void GetSum(int numM, int numN)
     {
         sum += NumberFromMtoN(numM + i, numN);
     }
-    Console.WriteLine(sum);
+    Console.WriteLine($"Сумма натуральных чисел между числами {numM} и {numN} равна {sum}.");
 }
 
 
 
-Console.Write("Введите первое целое число больше нуля: ");
+Console.Write("Введите первое целое число: ");
 int numberM = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе целое число больше нуля: ");
+Console.Write("Введите второе целое число: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
 GetSum(numberM, numberN);
